@@ -1,0 +1,17 @@
+% Aim : Create a scatter plot of random data points.
+
+% generate the random data :
+num_points = 50;
+x = randn(num_points,1); %random x values...
+y = randn(num_points,1); %random y values...
+
+% create a scatter plot :
+scatter(x,y,'filled'); % "filled" = fills the markers...
+
+% add labels and title : 
+xlebel('X')
+ylabel('Y')
+title('Scatter plot of random data points')
+
+% display the grid 
+grid on 
