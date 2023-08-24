@@ -1,1 +1,21 @@
+% Aim : Plot a sine wave using the plot function.
 
+% define the range of x values :("linespace(start,end,steps);")
+x = linspace(0 ,2*pi, 100); 
+
+% Calculate the corresponding y values using the sin function :
+y = sin(x);
+
+% Plot the sin wave :
+plot(x,y)
+
+% add labels and title of x-Axis, y-Axis:
+xlabel('x')
+ylabel('y = sin(x)')
+title('Plot of the sin wave')
+
+% display the grid :
+grid on
+
+% show the plot:
+legend('sin(x)')
