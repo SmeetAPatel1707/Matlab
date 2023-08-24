@@ -1,0 +1,14 @@
+% Aim :Generate a vector with values from 1 to 10 and calculate its mean, median, and standard deviation.
+% Generate a vector with values from 1 to 10
+vector = 1:10;
+
+% Calculate mean, median, and standard deviation
+mean_value = mean(vector);
+median_value = median(vector);
+std_deviation = std(vector);
+
+% Display the results
+fprintf('Vector: %s\n', mat2str(vector));
+fprintf('Mean: %.2f\n', mean_value);
+fprintf('Median: %.2f\n', median_value);
+fprintf('Standard Deviation: %.2f\n', std_deviation);
