@@ -1,0 +1,44 @@
+% Aim : Plot multiple functions on the same graph with appropriate labels and legends.
+
+% Define the range of x values...
+
+x = linspace(0, 2*pi, 100);
+
+% Calculate y values for different functions...
+
+y1 = sin(x);
+y2 = cos(x);
+y3 = 0.7 * cos(2*x);
+
+% Create a plot for the first function...
+
+plot(x, y1, 'b', 'LineWidth', 2) % 'b' for blue color, LineWidth for thicker line
+hold on % Hold the plot to add more functions
+
+% Create a plot for the second function...
+
+plot(x, y2, 'r--', 'LineWidth', 2) % 'r--' for red dashed line
+
+% Create a plot for the third function...
+
+plot(x, y3, 'g.-', 'LineWidth', 2) % 'g.-' for green dotted line with markers
+
+% Add labels and title...
+
+xlabel('x')
+ylabel('y')
+title('Multiple Functions Plot')
+
+% Add a legend...
+
+legend('sin(x)', 'cos(x)', '0.7 * cos(2*x)')
+
+% Display the grid...
+
+grid on
+
+% Release the plot hold...
+
+hold off
+
+% Show the plot...
