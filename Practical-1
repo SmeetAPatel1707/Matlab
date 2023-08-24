@@ -1,0 +1,12 @@
+% 1.1 Aim : Print &quot;Hello, MATLAB!&quot; using the disp function.
+
+disp('Hello MATLAB !');
+
+% 1.2 Aim : Perform basic arithmetic operations (addition, subtraction, multiplication, division) on given numbers.
+
+x = 98;
+y = 67;
+disp(x+y);
+disp(x-y);
+disp(x*y);
+disp(x/y);
