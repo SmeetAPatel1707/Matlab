@@ -1,0 +1,19 @@
+% Aim : Solve a system of linear equations using matrix operations.
+
+% System Linear Equations : A = A^-1 * B
+
+A = [2,1; 3,4];
+B = [6; 7];
+A_inverse = inv(A);
+
+Solution = A_inverse * B;
+
+disp('A');
+disp(A);
+disp('B');
+disp(B);
+disp('A^-1')
+disp(A_inverse);
+disp('Solution')
+disp(Solution);
+
