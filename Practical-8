@@ -1,0 +1,69 @@
+% 8.1 Aim : Generate a noisy sine wave signal and apply a low-pass filter using the conv function.----------------------------------------------------------------------------
+
+% Parameters of Signal and Filter : Sampling frequency(Sf), Time
+% vector(Tv), Frequency of the sine wave(Fs), Amplitude of the sine
+% wave(As), Power of the noise(Pn)...
+
+Sf = 1000;
+Tv = 0:1/Sf:1;
+Fs = 5;
+As = 1;
+Pn = 0.2;
+
+% Generate the noisy sine wave signal...
+clean_signal = As * sin(2*pi*Fs*Tv);
+noise = sqrt(Pn) * randn(size(Tv));
+Noisy_Signal = clean_signal + noise;
+
+% Define Low pass filter...
+Cutoff_Frequency = 20;
+Filter_Order = 50;
+Filter_Co_Effs = fir1(Filter_Order, Cutoff_Frequency / (Sf/2));
+
+% Apply the low-pass filter using convolution function...
+Filtered_Signal = conv(Noisy_Signal, Filter_Co_Effs, 'same');
+
+% Plot the original noisy signal, filtered signal, and clean signal
+% figure...
+
+subplot(3,1,1);
+plot(Tv, Noisy_Signal);
+title('Noisy Sine Wave Signal');
+
+subplot(3,1,2);
+plot(Tv, Filtered_Signal);
+title('Filtered Signal');
+
+subplot(3,1,3);
+plot(Tv, clean_signal);
+title('Clean Sine Wave Signal');
+
+xlabel('Time(s)');
+
+% Display the plots...
+sgtitle('Noisy Sine Wave Signal, Filtered Signal, and Clean Signal');
+
+% 8.2 Aim : Calculate the Fast Fourier Transform (FFT) of a given signal and plot its magnitude spectrum.---------------------------------------------------------------------
+
+% Parameters
+fs = 1000; % Sampling frequency (Hz)
+t = 0:1/fs:1; % Time vector
+f = 5; % Frequency of the sinusoid (Hz)
+signal = sin(2*pi*f*t);
+
+% Calculate the FFT
+N = length(signal);
+fft_result = fft(signal);
+
+% Calculate the frequency axis for plotting
+frequencies = (0:N-1) * (fs / N);
+
+% Plot the magnitude spectrum
+magnitude_spectrum = abs(fft_result);
+
+figure;
+plot(frequencies, magnitude_spectrum);
+xlabel('Frequency (Hz)');
+ylabel('Magnitude');
+title('Magnitude Spectrum');
+
