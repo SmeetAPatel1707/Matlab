@@ -1,0 +1,17 @@
+% Aim : Design a simple digital filter using the fir1 function.-----------------------------------------------------------------------------------------------------------------
+% Filter order
+order = 30;
+
+% Cutoff frequency normalized to Nyquist frequency (0.5)
+cutoff = 0.2;
+
+% Design the FIR filter using fir1
+filter_coeffs = fir1(order, cutoff);
+
+% Display the filter coefficients
+disp('Filter Coefficients:');
+disp(filter_coeffs);
+
+% Plot the frequency response of the filter
+freqz(filter_coeffs, 1);
+title('Frequency Response of the FIR Filter');
