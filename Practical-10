@@ -1,0 +1,46 @@
+% 10.1 Aim : Load and display an image using the imshow function.---------------------------------------------------------------------------------------------------------------
+
+% Load an image
+image_path = 'path_to_your_image.jpg'; % Replace with the actual image path
+image_data = imread(image_path);
+
+% Display the image using imshow
+imshow(image_data);
+
+% Optionally, add a title to the image window
+title('Displayed Image');
+
+% 10.2 Aim : Convert a color image to grayscale in matlab---------------------------------------------------------------------------------------------------------------------
+
+% Load a color image
+image_path = 'path_to_your_color_image.jpg'; % Replace with the actual image path
+color_image = imread(image_path);
+
+% Convert the color image to grayscale
+gray_image = rgb2gray(color_image);
+
+% Display the grayscale image using imshow
+imshow(gray_image);
+title('Grayscale Image');
+
+% 10.3 Aim : Apply filters (e.g., Gaussian blur) to an image and observe the effects.-----------------------------------------------------------------------------------------
+
+% Load a color image
+image_path = 'path_to_your_image.jpg'; % Replace with the actual image path
+color_image = imread(image_path);
+
+% Convert the color image to grayscale
+gray_image = rgb2gray(color_image);
+
+% Apply Gaussian blur to the grayscale image
+sigma = 2; % Standard deviation of the Gaussian kernel
+blurred_image = imgaussfilt(gray_image, sigma);
+
+% Display the original and blurred images side by side
+subplot(1, 2, 1);
+imshow(gray_image);
+title('Original Grayscale Image');
+
+subplot(1, 2, 2);
+imshow(blurred_image);
+title(['Blurred Image (Gaussian \sigma = ' num2str(sigma) ')']);
